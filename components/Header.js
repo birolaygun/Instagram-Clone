@@ -81,6 +81,7 @@ const Header = () => {
               <UserGroupIcon className="navBtn" />
               <HeartIcon className="navBtn" />
               <img
+                className="pr-2"
                 onClick={() => signOut()}
                 className="h-10 w-10 rounded-full cursor-pointer"
                 src={session?.user.image}
@@ -88,7 +89,9 @@ const Header = () => {
               />
             </>
           ) : (
-            <button onClick={() => signIn()}>Giriş</button>
+            <button onClick={() => signIn()}>
+              Giriş
+            </button>
           )}
         </div>
       </div>
