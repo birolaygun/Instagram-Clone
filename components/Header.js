@@ -18,7 +18,6 @@ const Header = () => {
   const router = useRouter();
   const [open, setOpen] = useRecoilState(modalState);
 
-
   return (
     <div className="header shadow-sm border-b bg-white sticky top-0 z-50 ">
       <div className="flex justify-between max-w-6xl mx-5 lg:mx-auto ">
@@ -51,8 +50,20 @@ const Header = () => {
         </div>
 
         <div className="flex items-center space-x-4 pr-3">
-          <HomeIcon onClick={() => router.push("/")} className="navBtn" />
-          <MenuIcon className="h-6 md:hidden cursor-pointer" />
+          <HomeIcon
+            onClick={() => router.push("/")}
+            className="h-6 cursor-pointer"
+          />
+
+          {session ? (
+            <PlusCircleIcon
+              onClick={() => setOpen(true)}
+              className="h-6 md:hidden cursor-pointer"
+            />
+          ) : (
+            <MenuIcon className="h-6 md:hidden cursor-pointer" />
+          )}
+
           {session ? (
             <>
               <div className="relative navBar">
