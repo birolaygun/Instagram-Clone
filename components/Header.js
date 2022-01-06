@@ -52,7 +52,7 @@ const Header = () => {
         <div className="flex items-center space-x-4 pr-3">
           <HomeIcon
             onClick={() => router.push("/")}
-            className="h-6 cursor-pointer"
+            className="hidden md:flex h-6 cursor-pointer"
           />
 
           {session ? (
