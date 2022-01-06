@@ -20,7 +20,7 @@ const Header = () => {
 
   return (
     <div className="header shadow-sm border-b bg-white sticky top-0 z-50 ">
-      <div className="flex justify-between max-w-6xl mx-5 lg:mx-auto ">
+      <div className="flex justify-between max-w-6xl mx-2 lg:mx-auto ">
         <div className="flex justify-center items-center">
           <div
             onClick={() => router.push("/")}
@@ -49,12 +49,7 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="flex items-center space-x-4 pr-3">
-          <HomeIcon
-            onClick={() => router.push("/")}
-            className="hidden md:flex h-6 cursor-pointer"
-          />
-
+        <div className="flex items-center">
           {session ? (
             <PlusCircleIcon
               onClick={() => setOpen(true)}
@@ -63,6 +58,13 @@ const Header = () => {
           ) : (
             <MenuIcon className="h-6 md:hidden cursor-pointer" />
           )}
+        </div>
+
+        <div className="flex items-center space-x-4 pr-3">
+          <HomeIcon
+            onClick={() => router.push("/")}
+            className="hidden md:flex h-6 cursor-pointer"
+          />
 
           {session ? (
             <>
