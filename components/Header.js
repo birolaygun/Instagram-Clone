@@ -61,7 +61,7 @@ const Header = () => {
           )}
         </div>
 
-        <div className="flex items-center space-x-4 pr-3">
+        <div className="flex items-center space-x-4 pr-3 mr-2">
           <HomeIcon
             onClick={() => router.push("/")}
             className="hidden md:flex h-6 cursor-pointer"
@@ -83,7 +83,7 @@ const Header = () => {
               <HeartIcon className="navBtn" />
               <img
                 onClick={() => signOut()}
-                className="mr-2 h-10 w-10 rounded-full cursor-pointer"
+                className="h-10 w-10 rounded-full cursor-pointer"
                 src={session?.user.image}
                 alt="nooo"
               />
