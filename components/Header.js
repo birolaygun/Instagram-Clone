@@ -12,6 +12,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useRecoilState } from "recoil";
 import { modalState } from "../atoms/modalAtom";
+import { photo } from "../photos/photos";
 
 const Header = () => {
   const { data: session } = useSession();
@@ -82,15 +83,13 @@ const Header = () => {
               <HeartIcon className="navBtn" />
               <img
                 onClick={() => signOut()}
-                className="pr-2 h-10 w-10 rounded-full cursor-pointer"
+                className="mr-2 h-10 w-10 rounded-full cursor-pointer"
                 src={session?.user.image}
                 alt="nooo"
               />
             </>
           ) : (
-            <button onClick={() => signIn()}>
-              Giriş
-            </button>
+            <button onClick={() => signIn()}>Giriş</button>
           )}
         </div>
       </div>
